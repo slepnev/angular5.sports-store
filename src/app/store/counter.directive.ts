@@ -5,17 +5,15 @@ import {
 @Directive({
   selector: '[appCounterOf]'
 })
-export class CounterDirective implements OnChanges {
-  constructor(private container: ViewContainerRef,
-              private template: TemplateRef<Object>) {
+export class CounterDirective {
+  constructor(private viewContainer: ViewContainerRef,
+              private templateRef: TemplateRef<Object>) {
   }
 
-  @Input('appCounterOf') appCounterOf: number;
-
-  ngOnChanges(changes: SimpleChanges) {
-    this.container.clear();
-    for (let i = 0; i < this.appCounterOf; i++) {
-      this.container.createEmbeddedView(this.template,
+  @Input() set appCounterOf(num: number) {
+    this.viewContainer.clear();
+    for (let i = 0; i < num; i++) {
+      this.viewContainer.createEmbeddedView(this.templateRef,
         new CounterDirectiveContext(i + 1));
     }
   }
