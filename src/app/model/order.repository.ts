@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import Order = jasmine.Order;
 import { Observable } from 'rxjs/Observable';
 import { StaticDataSource } from './static.datasource';
+import { Order } from './order.model';
 
 @Injectable()
 export class OrderRepository {
