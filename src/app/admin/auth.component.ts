@@ -17,8 +17,13 @@ export class AuthComponent implements OnInit {
 
   authenticate(form: NgForm) {
     if (form.valid) {
-      // Выполнить аутентификацию
-      this.router.navigateByUrl('/admin/main');
+      this.auth.authenticate(this.username, this.password)
+        .subscribe(response => {
+          if (response) {
+            this.router.navigateByUrl('/admin/main');
+          }
+          this.errorMessage = 'Authentication Failed';
+        });
     } else {
       this.errorMessage = 'Form Data Invalid';
     }

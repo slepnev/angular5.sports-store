@@ -2,12 +2,25 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthComponent } from './auth.component';
 import { AdminComponent } from './admin.component';
+import { AuthGuard } from './auth.guard';
+import { ProductTableComponent } from './product-table.component';
+import { OrderTableComponent } from './order-table.component';
+import { ProductEditorComponent } from './product-editor.component';
 
 
 const routes: Routes = [
-  { path: 'auth', component: AuthComponent},
-  { path: 'main', component: AdminComponent},
-  { path: '**', redirectTo: 'auth'}
+  {path: 'auth', component: AuthComponent},
+  {
+    path: 'main', component: AdminComponent, canActivate: [AuthGuard],
+    children: [
+      {path: 'products/:mode/:id', component: ProductEditorComponent},
+      {path: 'products/:mode', component: ProductEditorComponent},
+      {path: 'products', component: ProductTableComponent},
+      {path: 'orders', component: OrderTableComponent},
+      {path: '**', redirectTo: 'products'}
+    ]
+  },
+  {path: '**', redirectTo: 'auth'}
 ];
 
 @NgModule({
@@ -18,4 +31,5 @@ const routes: Routes = [
     RouterModule.forChild(routes)
   ],
 })
-export class AdminRoutingModule { }
+export class AdminRoutingModule {
+}
