@@ -4,7 +4,8 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --port 3000 --open",
+    "start": "concurrently \"npm run json\" \"npm run web\" ",
+    "web": "ng serve --port 3000 --open",
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
@@ -36,8 +37,11 @@
     "@types/jasminewd2": "~2.0.2",
     "@types/node": "~6.0.60",
     "codelyzer": "^4.0.1",
+    "concurrently": "^3.5.1",
     "jasmine-core": "~2.8.0",
     "jasmine-spec-reporter": "~4.2.1",
+    "json-server": "0.8.21",
+    "jsonwebtoken": "7.1.9",
     "karma": "~2.0.0",
     "karma-chrome-launcher": "~2.2.0",
     "karma-coverage-istanbul-reporter": "^1.2.1",
@@ -46,8 +50,6 @@
     "protractor": "~5.1.2",
     "ts-node": "~4.1.0",
     "tslint": "~5.9.1",
-    "typescript": "~2.5.3",
-    "json-server": "0.8.21",
-    "jsonwebtoken": "7.1.9"
+    "typescript": "~2.5.3"
   }
 }

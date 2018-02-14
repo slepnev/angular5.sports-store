@@ -14,7 +14,14 @@ export class OrderRepository {
   loadOrders() {
     this.loaded = true;
     this.dataSource.getOrders()
-      .subscribe(orders => this.orders = orders);
+      .subscribe(orders => {
+        this.orders = orders;
+      }, (error) => null
+    );
+  }
+
+  resetLoad() {
+    this.loaded = false;
   }
 
   getOrders(): Order[] {
