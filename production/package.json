@@ -12,6 +12,6 @@
   "scripts": {
     "start": "concurrently \"npm run express\" \"npm run json\" ",
     "express": "node server.js",
-    "json": "json-server data.js -m authMiddleware.js -p 3500"
+    "json": "json-server ../server-json/data.js -m ../server-json/authMiddleware.js -p 3500"
   }
 }
