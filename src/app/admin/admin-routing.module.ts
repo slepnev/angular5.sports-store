@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthComponent } from './auth.component';
+import { AuthComponent } from './auth/auth.component';
 import { AdminComponent } from './admin.component';
-import { AuthGuard } from './auth.guard';
-import { ProductTableComponent } from './product-table.component';
-import { OrderTableComponent } from './order-table.component';
-import { ProductEditorComponent } from './product-editor.component';
+import { AuthGuard } from '../shared/auth.guard';
+import { ProductTableComponent } from './product-table/product-table.component';
+import { OrderTableComponent } from './order-table/order-table.component';
+import { ProductEditorComponent } from './product-editor/product-editor.component';
 
 
 const routes: Routes = [
