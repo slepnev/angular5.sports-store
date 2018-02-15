@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Order } from '../model/order.model';
-import { OrderRepository } from '../model/order.repository';
+import { Order } from '../../model/order.model';
+import { OrderRepository } from '../../model/order.repository';
 
 @Component({
   selector: 'app-order-table',

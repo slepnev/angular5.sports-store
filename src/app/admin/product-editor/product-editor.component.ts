@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ProductRepository } from '../model/product.repository';
-import { Product } from '../model/product.model';
+import { ProductRepository } from '../../model/product.repository';
+import { Product } from '../../model/product.model';
 import { NgForm } from '@angular/forms';
 
 @Component({
