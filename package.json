@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "concurrently \"npm run json\" \"npm run web\" ",
-    "web": "ng serve --port 3000 --open --hmr",
+    "web": "ng serve --hmr --port 3000 --open",
     "build": "ng build --prod --enviroment=prod",
     "test": "ng test",
     "lint": "ng lint",
